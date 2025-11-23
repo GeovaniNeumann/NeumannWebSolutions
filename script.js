@@ -1,7 +1,7 @@
 
-        
-        // INICIALIZAÇÃO GERAL 
-        
+        // ================================
+        // INICIALIZAÇÃO GERAL
+        // ================================
         let initialized = false;
         function initializeAll() {
             if (initialized) return;
@@ -15,6 +15,7 @@
             initializeScrollReveal();
             initializeBackToTop();
             initializeLazyLoading();
+            initializeContactForm();
         }
         
         if (document.readyState === 'loading') {
@@ -23,9 +24,9 @@
             initializeAll();
         }
         
-        
+        // ================================
         // MENU HAMBURGUER SIMPLIFICADO
-        
+        // ================================
         function initializeMobileMenu() {
             const menuToggle = document.getElementById('menuToggle');
             const nav = document.getElementById('nav');
@@ -65,9 +66,9 @@
             });
         }
         
-        
+        // ================================
         // SCROLL SMOOTH E SPY
-        
+        // ================================
         function initializeSmoothScroll() {
             const anchors = document.querySelectorAll('a[href^="#"]');
            
@@ -120,8 +121,9 @@
             updateActiveLink();
         }
         
+        // ================================
         // EFEITO DO HEADER AO SCROLL
-
+        // ================================
         function initializeHeaderScroll() {
             const header = document.getElementById('header');
            
@@ -136,8 +138,9 @@
             handleScroll();
         }
         
+        // ================================
         // SCROLL REVEAL ANIMATIONS (IO API)
-
+        // ================================
         function initializeScrollReveal() {
             const reveals = document.querySelectorAll('[class*="reveal-"]');
             const observerOptions = {
@@ -164,8 +167,9 @@
             reveals.forEach(el => observer.observe(el));
         }
         
+        // ================================
         // BOTÃO VOLTAR AO TOPO
-
+        // ================================
         function initializeBackToTop() {
             const backToTopButton = document.getElementById('backToTop');
            
@@ -191,8 +195,9 @@
             handleBackToTopScroll();
         }
         
+        // ================================
         // LAZY LOADING PARA IMAGENS
-
+        // ================================
         function initializeLazyLoading() {
             const lazyImages = document.querySelectorAll('img[data-src]');
             
@@ -213,6 +218,61 @@
                 // Fallback para navegadores antigos
                 lazyImages.forEach(img => {
                     img.src = img.dataset.src;
+                });
+            }
+        }
+        
+        // ================================
+        // FORMULÁRIO DE CONTATO INTEGRADO COM WHATSAPP
+        // ================================
+        function initializeContactForm() {
+            const contactForm = document.getElementById('contactForm');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Coletar dados do formulário
+                    const nome = document.getElementById('nome').value;
+                    const email = document.getElementById('email').value;
+                    const telefone = document.getElementById('telefone').value;
+                    const mensagem = document.getElementById('mensagem').value;
+                    
+                    // Validar campos obrigatórios
+                    if (!nome || !email || !mensagem) {
+                        alert('Por favor, preencha todos os campos obrigatórios.');
+                        return;
+                    }
+                    
+                    // Criar mensagem para WhatsApp
+                    const numeroWhatsApp = '5541997552818';
+                    let textoMensagem = `Olá! Gostaria de solicitar um orçamento.\n\n`;
+                    textoMensagem += `*Nome:* ${nome}\n`;
+                    textoMensagem += `*E-mail:* ${email}\n`;
+                    if (telefone) textoMensagem += `*Telefone:* ${telefone}\n`;
+                    textoMensagem += `*Mensagem:* ${mensagem}\n\n`;
+                    textoMensagem += `Aguardo seu retorno!`;
+                    
+                    // Codificar mensagem para URL
+                    const mensagemCodificada = encodeURIComponent(textoMensagem);
+                    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+                    
+                    // Feedback visual
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redirecionando...';
+                    submitBtn.disabled = true;
+                    
+                    // Redirecionar para WhatsApp após breve delay
+                    setTimeout(() => {
+                        window.open(urlWhatsApp, '_blank');
+                        
+                        // Resetar formulário
+                        this.reset();
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }, 1500);
                 });
             }
         }

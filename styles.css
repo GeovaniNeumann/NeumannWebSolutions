@@ -1,5 +1,7 @@
 
-        /* RESET E VARIÁVEIS GLOBAIS */
+        /* ================================
+           RESET E VARIÁVEIS GLOBAIS
+           ================================ */
         * {
             margin: 0;
             padding: 0;
@@ -37,7 +39,6 @@
         .section-padding {
             padding: 8rem 0;
         }
-
         /* Efeito de gradiente em textos */
         .text-neon-gradient {
             background: linear-gradient(90deg, var(--color-neon), #33e6ff);
@@ -85,7 +86,9 @@
             transform: translateX(0);
         }
 
-        /* HEADER & NAVEGAÇÃO */
+        /* ================================
+           HEADER & NAVEGAÇÃO
+           ================================ */
         .header {
             position: fixed;
             top: 0;
@@ -149,8 +152,9 @@
         .cta-header {
             margin-left: 2rem;
         }
-
-        /* BOTÕES (Glass / Neon Glow) */
+        /* ================================
+           BOTÕES (Glass / Neon Glow)
+           ================================ */
         .btn {
             padding: 0.8rem 1.8rem;
             border-radius: 50px;
@@ -201,7 +205,9 @@
             background: rgba(20, 197, 228, 0.1);
             box-shadow: 0 0 20px rgba(20, 197, 228, 0.6);
         }
-        /* HERO SECTION */
+        /* ================================
+           HERO SECTION
+           ================================ */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -249,7 +255,9 @@
             z-index: 0;
             transition: opacity 0.2s ease;
         }
-        /* SECTIONS GERAIS */
+        /* ================================
+           SECTIONS GERAIS
+           ================================ */
         .section-title {
             font-size: 3rem;
             font-weight: 800;
@@ -271,8 +279,9 @@
             pointer-events: none;
             opacity: 0.8;
         }
-
-        /* CARDS (Glassmorphism Avançado) */
+        /* ================================
+           CARDS (Glassmorphism Avançado)
+           ================================ */
         .card {
             background: var(--color-card);
             border: 1px solid var(--color-border-subtle);
@@ -321,15 +330,17 @@
         .card p {
             color: var(--color-text-secondary);
         }
-
-        /* SERVIÇOS */
+        /* ================================
+           SERVIÇOS
+           ================================ */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-
-        /* SOBRE (Feature Layout) */
+        /* ================================
+           SOBRE (Feature Layout)
+           ================================ */
         .about-container {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -398,8 +409,9 @@
             border-radius: 25px;
             pointer-events: none;
         }
-
-        /* PORTFÓLIO */
+        /* ================================
+           PORTFÓLIO
+           ================================ */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -450,8 +462,9 @@
             color: var(--color-text-light);
             margin-top: 0.5rem;
         }
-
-        /* CONTATO (CTA Section) */
+        /* ================================
+           CONTATO (CTA Section)
+           ================================ */
         .cta-section {
             background: var(--color-card);
             border-top: 1px solid var(--color-border-subtle);
@@ -463,19 +476,19 @@
             align-items: center;
         }
         .contact-card-cta {
-            padding: 3rem;
+            padding: 2rem;
             border-radius: 20px;
             background: var(--color-primary);
             box-shadow: var(--shadow-neon);
             text-align: center;
         }
         .contact-title {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 1rem;
         }
         .contact-subtitle {
             font-size: 1.1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             color: var(--color-text-secondary);
         }
         .contact-details {
@@ -507,8 +520,112 @@
         .detail-item a:hover {
             color: var(--color-neon);
         }
-
-        /* FOOTER */
+        /* ================================
+           FORMULÁRIO DE CONTATO COMPACTO
+           ================================ */
+        .contact-form {
+            background: var(--color-card);
+            border-radius: 15px;
+            padding: 4.5em;
+            box-shadow: var(--shadow-card);
+            margin-top: 1.9rem;
+            border: 1px solid var(--color-border-subtle);
+        }
+        .contact-form h3 {
+            text-align: center;
+            margin-bottom: 1.2rem;
+            color: var(--color-neon);
+            font-size: 1.2  rem;
+        }
+        .form-group {
+            margin-bottom: 0.8rem;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.7rem;
+            background: var(--color-primary);
+            border: 1px solid var(--color-border-subtle);
+            border-radius: 8px;
+            color: var(--color-text-light);
+            font-family: var(--font-primary);
+            font-size: 0.9rem;
+            transition: var(--transition-fast);
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-neon);
+            box-shadow: 0 0 10px rgba(20, 197, 228, 0.3);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 70px;
+        }
+        .form-submit-btn {
+            width: 100%;
+            margin-top: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        /* ================================
+           DEPOIMENTOS
+           ================================ */
+        .testimonials {
+            background: var(--color-card);
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .testimonial-card {
+            background: var(--color-primary);
+            border: 1px solid var(--color-border-subtle);
+            border-radius: 18px;
+            padding: 2rem;
+            position: relative;
+            transition: var(--transition-fast);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-neon);
+            box-shadow: 0 10px 30px rgba(20, 197, 228, 0.2);
+        }
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--color-neon);
+            opacity: 0.3;
+            font-family: serif;
+        }
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .client-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .client-info strong {
+            color: var(--color-neon);
+            margin-bottom: 0.3rem;
+        }
+        .client-info span {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
+        /* ================================
+           FOOTER
+           ================================ */
         .footer {
             background: var(--color-primary);
             border-top: 1px solid var(--color-border-subtle);
@@ -568,8 +685,9 @@
         .footer-bottom i {
             color: #ff0077;
         }
-
-        /* BOTÃO VOLTAR AO TOPO */
+        /* ================================
+           BOTÃO VOLTAR AO TOPO
+           ================================ */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -600,8 +718,9 @@
             box-shadow: 0 10px 30px rgba(20, 197, 228, 0.8);
             transform: translateY(-8px) scale(1.05);
         }
-
-        /* MENU MOBILE SIMPLIFICADO */
+        /* ================================
+           MENU MOBILE SIMPLIFICADO
+           ================================ */
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -633,7 +752,20 @@
             transform: rotate(-45deg) translate(7px, -7px);
         }
         
-        /* MEDIA QUERIES RESPONSIVAS */
+        /* ================================
+           ACESSIBILIDADE - REDUÇÃO DE MOVIMENTO
+           ================================ */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* ================================
+           MEDIA QUERIES RESPONSIVAS
+           ================================ */
         @media (max-width: 1200px) {
             .hero-title {
                 font-size: 3.8rem;
@@ -759,7 +891,8 @@
                 font-size: 2rem;
             }
             .services-grid,
-            .portfolio-grid {
+            .portfolio-grid,
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
             .container {
@@ -782,10 +915,13 @@
                 margin-top: 2em;
             }
             .contact-card-cta {
-                padding: 2rem;
+                padding: 1.5rem;
             }
             .contact-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+            .contact-form {
+                padding: 1.2rem;
             }
             .portfolio-grid {
                 grid-template-columns: 1fr;
@@ -825,6 +961,9 @@
             }
             .section-padding {
                 padding: 4rem 0;
+            }
+            .contact-form {
+                padding: 1rem;
             }
         }
         
