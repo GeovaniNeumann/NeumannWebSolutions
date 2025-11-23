@@ -878,10 +878,52 @@
             .about-image-content {
                 margin-top: 2em;
             }
-        }
-        
-        @media (max-width: 768px) {
-            .section-padding {
+            
+            }
+    
+            @media (max-width: 1024px) {
+            /* ... outros estilos ... */
+            
+            .about-image-content {
+                margin-top: 2em;
+                max-width: 90%; /* Limita a largura máxima */
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .about-image-content .abstract-image {
+                height: 350px; /* Reduz a altura da imagem */
+            }
+            }
+            
+            @media (max-width: 768px) {
+                /* ... outros estilos ... */
+                
+                .about-image-content {
+                    margin-top: 2em;
+                    max-width: 90%; /* Limita ainda mais em telas menores */
+                }
+                
+                .about-image-content .abstract-image {
+                    height: 300px; /* Altura ainda menor para mobile */
+                }
+            }
+            
+            @media (max-width: 480px) {
+                /* ... outros estilos ... */
+                
+                .about-image-content {
+                    margin-top: 1.5em;
+                    max-width: 95%;
+                }
+                
+                .about-image-content .abstract-image {
+                    height: 250px; /* Altura mínima para mobile muito pequeno */
+                }
+            }
+                    
+            @media (max-width: 768px) {
+                .section-padding {
                 padding: 6rem 0;
             }
             .hero-title {
